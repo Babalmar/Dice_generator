@@ -1,23 +1,29 @@
 import random
 from tkinter import * 
 
+#main settings
 window = Tk()
 window.geometry("480x480")
 window.wm_title("Dice generator")
 window.iconbitmap("Iconsmind-Outline-Dice.ico")
-frame1 = Frame(window, height=10, width=480, relief="groove",borderwidth=5)
+
+
+frame1 = Frame(window)
 frame1.pack()
-frame2 = Frame(window,)
+frame2 = Frame(window)
 frame2.pack()
-frame3 = Frame(window,)
+frame3 = Frame(window)
 frame3.pack()
 
 label = Label(frame1, text='')
+#frame1.grid_propagate(0)
 label_poly = Label(frame2, text="Polyhedrals dices")
-label_poly.pack()
+#label_poly.pack()
 label_non_poly = Label(frame3, text="Non-polyhedrals dices")
-label_non_poly.pack()
+#label_non_poly.pack()
 
+
+#dice mechanics
 def dice4():
     d4 = random.randint(1,4)
     label.configure(text="Dice throw (d4): " + str(d4))
@@ -90,6 +96,7 @@ d16_button = Button(frame3, text='D16', command=dice16)
 d24_button = Button(frame3, text='D24', command=dice24)
 d30_button = Button(frame3, text='D30', command=dice30)
 
+'''
 label.pack()
 d4_button.pack(padx = 3, pady = 3)
 d6_button.pack(padx = 3, pady = 3)
@@ -106,5 +113,31 @@ d14_button.pack(padx = 3, pady = 3)
 d16_button.pack(padx = 3, pady = 3)
 d24_button.pack(padx = 3, pady = 3)
 d30_button.pack(padx = 3, pady = 3)
+'''
+
+label = Label(frame1, text='')
+label_poly = Label(frame2, text="Polyhedrals dices")
+label_non_poly = Label(frame3, text="Non-polyhedrals dices")
+
+label.grid(row=0, column=2, columnspan=3)
+label_poly.grid(row=2, column=3, columnspan=3)
+label_non_poly.grid(row=5, column=3, columnspan=3)
+
+d4_button.grid(row=3, column=1)
+d6_button.grid(row=3, column=2)
+d8_button.grid(row=3, column=3)
+d10_button.grid(row=3, column=4)
+d12_button.grid(row=3, column=5)
+d20_button.grid(row=3, column=6)
+d100_button.grid(row=3, column=7)
+
+d3_button.grid(row=6, column=1)
+d5_button.grid(row=6, column=2)
+d7_button.grid(row=6, column=3)
+d14_button.grid(row=6, column=4)
+d16_button.grid(row=6, column=5)
+d24_button.grid(row=6, column=6)
+d30_button.grid(row=6, column=7)
+
 
 window.mainloop()
