@@ -3,11 +3,11 @@ from tkinter import *
 
 #main settings
 window = Tk()
-window.geometry("480x480")
+window.geometry("320x240")
 window.wm_title("Dice generator")
 window.iconbitmap("Iconsmind-Outline-Dice.ico")
 
-
+#frames
 frame1 = Frame(window)
 frame1.pack()
 frame2 = Frame(window)
@@ -15,13 +15,10 @@ frame2.pack()
 frame3 = Frame(window)
 frame3.pack()
 
-label = Label(frame1, text='')
-#frame1.grid_propagate(0)
+#labels
+label = Label(frame1, text='Press any dice button to get a random number')
 label_poly = Label(frame2, text="Polyhedrals dices")
-#label_poly.pack()
 label_non_poly = Label(frame3, text="Non-polyhedrals dices")
-#label_non_poly.pack()
-
 
 #dice mechanics
 def dice4():
@@ -79,65 +76,46 @@ def dice24():
 def dice30():
     d30 = random.randint(1,30)
     label.configure(text="Dice throw (d30): " + str(d30))
-   
-d4_button = Button(frame2, text='D4', command=dice4)
-d6_button = Button(frame2, text='D6', command=dice6)
-d8_button = Button(frame2, text='D8', command=dice8)
-d10_button = Button(frame2, text='D10', command=dice10)
-d12_button = Button(frame2, text='D12', command=dice12)
-d20_button = Button(frame2, text='D20', command=dice20)
-d100_button = Button(frame2, text='D100', command=dice100)
+    
+#polyhedral dice properties   
+d4_button = Button(frame2, text='d4', command=dice4)
+d6_button = Button(frame2, text='d6', command=dice6)
+d8_button = Button(frame2, text='d8', command=dice8)
+d10_button = Button(frame2, text='d10', command=dice10)
+d12_button = Button(frame2, text='d12', command=dice12)
+d20_button = Button(frame2, text='d20', command=dice20)
+d100_button = Button(frame2, text='d100', command=dice100)
 
-d3_button = Button(frame3, text='D3', command=dice3)
-d5_button = Button(frame3, text='D5', command=dice5)
-d7_button = Button(frame3, text='D7', command=dice7)
-d14_button = Button(frame3, text='D14', command=dice14)
-d16_button = Button(frame3, text='D16', command=dice16)
-d24_button = Button(frame3, text='D24', command=dice24)
-d30_button = Button(frame3, text='D30', command=dice30)
+#non-polyhedral dice properties  
+d3_button = Button(frame3, text='d3', command=dice3)
+d5_button = Button(frame3, text='d5', command=dice5)
+d7_button = Button(frame3, text='d7', command=dice7)
+d14_button = Button(frame3, text='d14', command=dice14)
+d16_button = Button(frame3, text='d16', command=dice16)
+d24_button = Button(frame3, text='d24', command=dice24)
+d30_button = Button(frame3, text='d30', command=dice30)
 
-'''
-label.pack()
-d4_button.pack(padx = 3, pady = 3)
-d6_button.pack(padx = 3, pady = 3)
-d8_button.pack(padx = 3, pady = 3)
-d10_button.pack(padx = 3, pady = 3)
-d12_button.pack(padx = 3, pady = 3)
-d20_button.pack(padx = 3, pady = 3)
-d100_button.pack(padx = 3, pady = 3)
+#labels - grid
+label.grid(row=0, column=2, columnspan=7)
+label_poly.grid(row=2, column=2, columnspan=7)
+label_non_poly.grid(row=6, column=2, columnspan=7)
 
-d3_button.pack(padx = 3, pady = 3)
-d5_button.pack(padx = 3, pady = 3)
-d7_button.pack(padx = 3, pady = 3)
-d14_button.pack(padx = 3, pady = 3)
-d16_button.pack(padx = 3, pady = 3)
-d24_button.pack(padx = 3, pady = 3)
-d30_button.pack(padx = 3, pady = 3)
-'''
+#polyhedral dice buttons - grid
+d4_button.grid(row=4, column=1)
+d6_button.grid(row=4, column=2)
+d8_button.grid(row=4, column=3)
+d10_button.grid(row=4, column=4)
+d12_button.grid(row=4, column=5)
+d20_button.grid(row=4, column=6)
+d100_button.grid(row=4, column=7)
 
-label = Label(frame1, text='')
-label_poly = Label(frame2, text="Polyhedrals dices")
-label_non_poly = Label(frame3, text="Non-polyhedrals dices")
-
-label.grid(row=0, column=2, columnspan=3)
-label_poly.grid(row=2, column=3, columnspan=3)
-label_non_poly.grid(row=5, column=3, columnspan=3)
-
-d4_button.grid(row=3, column=1)
-d6_button.grid(row=3, column=2)
-d8_button.grid(row=3, column=3)
-d10_button.grid(row=3, column=4)
-d12_button.grid(row=3, column=5)
-d20_button.grid(row=3, column=6)
-d100_button.grid(row=3, column=7)
-
-d3_button.grid(row=6, column=1)
-d5_button.grid(row=6, column=2)
-d7_button.grid(row=6, column=3)
-d14_button.grid(row=6, column=4)
-d16_button.grid(row=6, column=5)
-d24_button.grid(row=6, column=6)
-d30_button.grid(row=6, column=7)
-
+#non-polyhedral dice buttons - grid
+d3_button.grid(row=8, column=1)
+d5_button.grid(row=8, column=2)
+d7_button.grid(row=8, column=3)
+d14_button.grid(row=8, column=4)
+d16_button.grid(row=8, column=5)
+d24_button.grid(row=8, column=6)
+d30_button.grid(row=8, column=7)
 
 window.mainloop()
