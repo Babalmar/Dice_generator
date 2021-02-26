@@ -16,9 +16,9 @@ frame3 = Frame(window)
 frame3.pack()
 
 #labels
-label = Label(frame1, text='Press any dice button to get a random number')
-label_poly = Label(frame2, text="Polyhedrals dices")
-label_non_poly = Label(frame3, text="Non-polyhedrals dices")
+label = Label(frame1, text='Press any dice button to get a random \nthrow result')
+label_poly = Label(frame2, text="Polyhedral dice")
+label_non_poly = Label(frame3, text="Non-polyhedral dice")
 
 #dice mechanics
 def dice4():
